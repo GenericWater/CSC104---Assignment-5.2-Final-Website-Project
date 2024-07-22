@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- author meta tag -->
+    <meta name="author" content="Lela J. Sanchez">
+    <!-- description meta tag -->
+    <meta name="description" content="Welcome to Puppy Playland! Discover the best dog parks with our interactive map. Search by location and amenities to find the perfect park for your furry friend. Enjoy detailed park information, reviews, and the ability to submit new parks.">
+    <title>Interactive Map - Puppy Playland</title>
+    <!-- Link to the Leaflet CSS library for interactive maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="main-final.css">
+</head>
+<body>
+    <!-- Header section containing the logo, navigation menu, and login/signup link -->
+    <header>
+        <div class="logo">
+            <img src="Images/puppy-playland-logo.JPG" alt="Puppy Playland Logo" class="logo-image">
+            Puppy Playland
+        </div>
+        <!-- Navigation menu -->
+        <nav>
+            <ul>
+                <li><a href="index-final.html">Home</a></li>
+                <li><a href="interMap-final.html">Interactive Map</a></li>
+                <li><a href="parkSub-final.html">Park Submission</a></li>
+                <li><a href="#reviews">Reviews and Ratings</a></li>
+                <li><a href="#blog">Blog and Tips</a></li>
+                <li><a href="#profiles">User Profiles</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="login-signup"><a href="#login">Login/Signup</a></div>
+    </header>
+
+    <main>
+        <!-- section for search filters -->
+        <aside class="sidebar">
+            <h2>Search Filters</h2>
+            <!-- Input field for search functionality -->
+            <input type="text" placeholder="Search by location, amenities..." id="search">
+        </aside>
+
+        <!-- Section containing the interactive map and park information -->
+        <section id="interactive-map-section">
+            <!-- Div for the interactive map -->
+            <div id="map"></div>
+            <!-- Div for displaying park information -->
+            <div id="park-info">
+                <h2>Park Information - Tom Brown Park</h2>
+                <p>Information about the selected park will appear here.</p>
+                <p>
+                    Tom Brown Park is an excellent destination for bringing your dog, featuring vast open spaces perfect for running and playing. The park includes well-maintained trails, designated off-leash areas, and ample shade, ensuring a comfortable and enjoyable experience for both dogs and their owners. </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer section -->
+    <footer>
+        <p>&copy; 2024 Puppy Playland. All rights reserved. CSC104 Lela J. Sanchez.</p>
+    </footer>
+
+    <!-- Leaflet JS -->
+     <!-- Allows me to use google maps to show selected dog park/s -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map
+        var map = L.map('map').setView([30.44305, -84.21797], 13); // Default location set to Tallahassee, Florida
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(map);
+
+        // Add a marker - sample dog park with information displayed
+        var marker = L.marker([30.44305, -84.21797]).addTo(map)
+            .bindPopup('Welcome to Puppy Playland!<br> This is a dog park in Tallhassee, Florida. Tom Brown Park.')
+            .openPopup();
+    </script>
+</body>
+</html>

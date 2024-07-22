@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- author meta tag -->
+    <meta name="author" content="Lela J. Sanchez">
+    <!-- description meta tag -->
+    <meta name="description" content="Submit your favorite dog parks to Puppy Playland! Provide accurate details about the park name, location, and notable features, and attach images to help other dog owners find great places for their furry friends. Join our community today!">
+    <title>Park Submission - Puppy Playland</title>
+    <link rel="stylesheet" href="main-final.css">
+</head>
+<body>
+    <!-- Header section containing the logo, navigation menu, and login/signup link -->
+    <header>
+        <div class="logo">
+            <img src="Images/puppy-playland-logo.JPG" alt="Puppy Playland Logo" class="logo-image">
+            Puppy Playland
+        </div>
+        <br> 
+        <!-- Navigation menu -->
+        <nav>
+            <ul>
+                <li><a href="index-final.html">Home</a></li>
+                <li><a href="interMap-final.html">Interactive Map</a></li>
+                <li><a href="parkSub-final.html">Park Submission</a></li>
+                <li><a href="#reviews">Reviews and Ratings</a></li>
+                <li><a href="#blog">Blog and Tips</a></li>
+                <li><a href="#profiles">User Profiles</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="login-signup"><a href="#login">Login/Signup</a></div>
+    </header>
+
+    <main>
+        <!-- Section for submission guidelines -->
+        <section class="guidelines">
+            <h2>Submission Guidelines</h2>
+            <p>Please fill out the form below to submit a new dog park. Make sure to provide accurate and detailed information to help other dog owners find the best parks.</p>
+            <p>Include the name, location, and notable features of the park. You can also attach images to showcase the park.</p>
+        </section>
+
+        <!-- Section for the park submission form -->
+        <section class="submission-form">
+            <h2>Park Submission</h2>
+            <!-- Form for submitting a new park with POST method and file upload capability -->
+            <!-- "#" = submit to the current page -->
+             <!-- post = will send data without appending it to the URL -->
+            <!-- "multipart/form-data" attribute is necessary to ensure the file data is properly encoded and sent to the server. -->
+            <form action="#" method="post" enctype="multipart/form-data">
+
+                <!-- Label and input field for the park name | "required" ensures that text field is filled out before submitting-->
+                <label for="park-name">Park Name</label>
+                <input type="text" id="park-name" name="park-name" required>
+
+                <!-- Label and input field for the park location -->
+                <label for="park-location">Park Location</label>
+                <input type="text" id="park-location" name="park-location" required>
+
+                <!-- Label and input field for notable features of the park -->
+                <label for="notable-features">Notable Features</label>
+                <input type="text" id="notable-features" name="notable-features" required>
+
+                <!-- Label and input field for attaching images -->
+                <label for="park-images">Attach Images</label>
+                <input type="file" id="park-images" name="park-images[]" multiple>
+
+                <!-- Submit button for the form -->
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Puppy Playland. All rights reserved. CSC104 Lela J. Sanchez.</p>
+    </footer>
+</body>
+</html>
